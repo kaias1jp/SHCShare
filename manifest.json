@@ -1,0 +1,19 @@
+{
+  "name": "SHCShare",
+  "manifest_version": 2,
+  "version": "1.0",
+  "browser_action": {
+    "default_title": "SHCShare",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+	"tabs"
+  ],
+  "content_scripts": [
+    {
+      "js": ["jquery.min.js", "content_script.js", "clipboard.min.js"],
+      "matches": ["http://*/*", "https://*/*"]
+    }
+  ]
+
+}
