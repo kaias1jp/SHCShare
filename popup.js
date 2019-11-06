@@ -9,13 +9,22 @@ window.onload = function() {
 		DataTitle = tab.title;
 		DataURL = tab.url;
 //window.open('https://test.simplehtmlclient.app/toot?content='+tab.title+'\n'+tab.url, '_blank');
+var svlist = document.getElementById('black')
+		console.log(localStorage["server"])
+		for (var i=0;i<5;i++) {
+			console.log(svlist.options[i].value)
+			if (svlist.options[i].value == localStorage["server"]) {
+				svlist.selectedIndex = i
+			}
 
+}
 	});
 }
 
 
 $("#red").on("click", () => {
 Server= document.getElementById('black').value;
+	localStorage["server"] = Server
 window.open(Server+'/toot?content='+DataTitle+'\n'+DataURL, '_blank');
   //送れない！！
   // chrome.runtime.sendMessage({ color: "red" });
