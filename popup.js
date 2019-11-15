@@ -32,7 +32,7 @@ $(function($) {
 $("#red").on("click", () => {
 Server= document.getElementById('black').value;
 	localStorage["server"] = Server
-window.open(Server+'/toot?'+encodeURI('content='+DataTitle+'\n'+DataURL, '_blank'));
+window.open(Server+'/toot?content='+encodeURIComponent(DataTitle+'\n'+DataURL), '_blank');
   //送れない！！
   // chrome.runtime.sendMessage({ color: "red" });
 
